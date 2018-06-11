@@ -1,0 +1,7 @@
+<h1>School Class Form</h1>
+<%= form_tag school_classes_path, method: "put" do %>
+<%= hidden_field_tag :id, @school_class.id %>
+<label>Room Number:</label> <%= text_field_tag :'school_class[room_number]', @school_class.room_number, id: 'school_class_room_number' %>
+<label>Title:</label>  <%= text_field_tag :'school_class[title]', @school_class.title, id: 'school_class_title' %>
+<%= submit_tag "Update School class" %>
+<% end %>

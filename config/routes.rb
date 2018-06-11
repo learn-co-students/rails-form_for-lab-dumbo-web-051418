@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+
+
+  post '/schoolclasses', to: 'school_classes#create'
+  get '/schoolclasses', to: 'school_classes#index', as: 'school_classes'
+  put '/schoolclasses', to: 'school_classes#update'
+  get '/schoolclasses/new', to: 'school_classes#new', as: 'new_school_class'
+  get '/schoolclasses/:id/edit', to: 'school_classes#edit', as: 'edit_school_class'
+  get '/schoolclasses/:id', to: 'school_classes#show', as: 'school_class'
+
+  post '/students', to: 'students#create', as: 'new_studentp' # because if i don't put this here then it whines about not being able to modify a frozen array for whatever reason
+  get '/students', to: 'students#index', as: 'students'
+  put '/students', to: 'students#update'
+  get '/students/new', to: 'students#new', as: 'new_student'
+  get '/students/:id/edit', to: 'students#edit', as: 'edit_student'
+  get '/students/:id', to: 'students#show', as: 'student'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
